@@ -1,0 +1,12 @@
+{
+  "name": "wordpress-theme-boilerplate",
+  "version": "1.0.0",
+  "description": "WordPress Theme Boilerplate",
+  "scripts": {
+    "sass": "sass assets/sass/style.scss style.css --watch",
+    "sass:build": "sass assets/sass/style.scss style.css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}
