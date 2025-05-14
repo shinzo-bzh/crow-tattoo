@@ -1,26 +1,15 @@
 <?php
-/* Template Name: Galerie */
+/**
+ * Template Name: Galerie
+ */
 
-get_header(); // Affiche l'entête du site
-?>
+get_header(); ?>
 
 <div class="section">
-    <div class="galerie-contenu">
-        <?php 
-        // Affiche la galerie en utilisant le shortcode Responsive Lightbox & Gallery
-        echo do_shortcode('[rl_gallery id="26"]');
-        ?>
+    <div class="accueil__gallery">
+        <h1 class="accueil__title accueil__title--animated">Galerie</h1>
+        <?php echo do_shortcode('[rl_gallery id="26"]'); ?>
     </div>
 </div>
 
-<style>
-    .galerie-contenu {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-</style>
-
-<?php
-get_footer(); // Affiche le pied de page
-?>
+<?php get_footer(); ?>

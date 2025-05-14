@@ -32,7 +32,7 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
     /**
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->internalArray);
     }
@@ -88,40 +88,42 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
     }
 
     /**
-     * @param string|int $index
+     * @param mixed $offset
      * @return bool
      */
-    public function offsetExists($index)
+    public function offsetExists(mixed $offset): bool
     {
-        return array_key_exists((int) $index, $this->internalArray);
+        return array_key_exists((int) $offset, $this->internalArray);
     }
 
     /**
-     * @param string|int $index
+     * @param mixed $offset
      * @return mixed
      */
-    public function offsetGet($index)
+    public function offsetGet(mixed $offset): mixed
     {
         /** @psalm-suppress MixedReturnStatement */
-        return $this->internalArray[(int) $index];
+        return $this->internalArray[(int) $offset];
     }
 
     /**
-     * @param string|int $index
-     * @param mixed $newval
+     * @param mixed $offset
+     * @param mixed $value
+     * @return void
      * @psalm-suppress MixedAssignment
      */
-    public function offsetSet($index, $newval)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
-        $this->internalArray[(int) $index] = $newval;
+        $this->internalArray[(int) $offset] = $value;
     }
 
     /**
-     * @param string|int $index
+     * @param mixed $offset
+     * @return void
      */
-    public function offsetUnset($index)
+    public function offsetUnset(mixed $offset): void
     {
-        unset($this->internalArray[(int) $index]);
+        unset($this->internalArray[(int) $offset]);
     }
 
     /**
@@ -130,7 +132,7 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
      * @return void
      * @since 5.3.0
      */
-    public function rewind()
+    public function rewind(): void
     {
         reset($this->internalArray);
     }
@@ -141,7 +143,7 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
      * @return mixed The current element value.
      * @since 5.3.0
      */
-    public function current()
+    public function current(): mixed
     {
         /** @psalm-suppress MixedReturnStatement */
         return current($this->internalArray);
@@ -149,9 +151,9 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
 
     /**
      * Return current array index
-     * @return int The current array index.
+     * @return mixed The current array index.
      */
-    public function key()
+    public function key(): mixed
     {
         return key($this->internalArray);
     }
@@ -159,7 +161,7 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
     /**
      * @return void
      */
-    public function next()
+    public function next(): void
     {
         next($this->internalArray);
     }
@@ -169,7 +171,7 @@ class SplFixedArray implements Iterator, ArrayAccess, Countable
      * @link https://php.net/manual/en/splfixedarray.valid.php
      * @return bool true if the array contains any more elements, false otherwise.
      */
-    public function valid()
+    public function valid(): bool
     {
         if (empty($this->internalArray)) {
             return false;

@@ -13,21 +13,30 @@ get_header(); // Affiche l'entête du site
                 <li>
                     <strong>Numéro de téléphone:</strong>
                     <div>
-                        <?php echo nl2br(get_field('numero_telephone')); ?>
+                        <?php 
+                        $tel = get_field('numero_telephone');
+                        echo $tel ? nl2br(esc_html($tel)) : 'Non renseigné';
+                        ?>
                     </div>
                 </li>
 
                 <li>
                     <strong>E-mail:</strong>
                     <div>
-                        <?php echo nl2br(get_field('adresse_mail')); ?>
+                        <?php 
+                        $email = get_field('adresse_mail');
+                        echo $email ? nl2br(esc_html($email)) : 'Non renseigné';
+                        ?>
                     </div>
                 </li>
 
                 <li>
                     <strong>Horaires:</strong>
                     <div>
-                        <?php echo nl2br(get_field('horraires')); ?>
+                        <?php 
+                        $horaires = get_field('horraires');
+                        echo $horaires ? nl2br(esc_html($horaires)) : 'Non renseigné';
+                        ?>
                     </div>
                 </li>
             </ul>
@@ -35,20 +44,19 @@ get_header(); // Affiche l'entête du site
 
         <div class="contact-social">
             <?php
-            // Récupérer les liens
             $lien_fb = get_field('lien_fb');
             $lien_insta = get_field('lien_insta');
+            ?>
 
-            // Vérifier si les liens existent avant d'afficher les icônes
-            if ($lien_fb) : ?>
-                <a href="<?php echo esc_url($lien_fb); ?>" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook"></i>
+            <?php if ($lien_fb) : ?>
+                <a href="<?php echo esc_url($lien_fb); ?>" target="_blank" aria-label="Lien vers Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             <?php endif; ?>
 
             <?php if ($lien_insta) : ?>
-                <a href="<?php echo esc_url($lien_insta); ?>" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="<?php echo esc_url($lien_insta); ?>" target="_blank" aria-label="Lien vers Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
                 </a>
             <?php endif; ?>
         </div>

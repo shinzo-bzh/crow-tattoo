@@ -13,39 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <?php wp_head(); ?>
-
     <style>
-        body {
+        .body-background {
             background-image: url('<?php echo wp_get_attachment_image_url(get_field('img_fond'), 'full'); ?>');
-            background-size: 85% auto;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-color: #1a1a1a;
-            position: relative;
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                background-size: 85% auto;
-            }
         }
     </style>
 </head>
 
-<body <?php body_class('body'); ?>>
+<body <?php body_class('body body-background'); ?>>
     <?php wp_body_open(); ?>
     
     <header class="header">
