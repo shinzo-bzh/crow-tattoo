@@ -6,7 +6,7 @@ get_header(); // Affiche l'entête du site
 
 <div class="section">
     <div class="container">
-        <h1 class="section-title">Contact</h1>
+        <h1 class="contact__title">Contact</h1>
         
         <div class="card contact-info">
             <ul>
@@ -42,13 +42,13 @@ get_header(); // Affiche l'entête du site
             // Vérifier si les liens existent avant d'afficher les icônes
             if ($lien_fb) : ?>
                 <a href="<?php echo esc_url($lien_fb); ?>" target="_blank" aria-label="Facebook">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="Facebook" width="24" height="24">
+                    <i class="fab fa-facebook"></i>
                 </a>
             <?php endif; ?>
 
             <?php if ($lien_insta) : ?>
                 <a href="<?php echo esc_url($lien_insta); ?>" target="_blank" aria-label="Instagram">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram" width="24" height="24">
+                    <i class="fab fa-instagram"></i>
                 </a>
             <?php endif; ?>
         </div>

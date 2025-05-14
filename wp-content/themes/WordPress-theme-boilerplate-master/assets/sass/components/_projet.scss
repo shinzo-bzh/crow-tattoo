@@ -19,10 +19,19 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                $color-accent 20%,
+                $color-accent 80%,
+                transparent 100%
+            );
             border-radius: 2px;
+            -webkit-animation: lineWidth 2s ease-in-out infinite;
+            -moz-animation: lineWidth 2s ease-in-out infinite;
+            -o-animation: lineWidth 2s ease-in-out infinite;
+            animation: lineWidth 2s ease-in-out infinite;
         }
     }
 
@@ -152,11 +161,12 @@
         }
 
         &__title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             padding-bottom: $spacing-small;
 
             &::after {
-                width: 60px;
+                width: 120px;
+                height: 2px;
             }
         }
 

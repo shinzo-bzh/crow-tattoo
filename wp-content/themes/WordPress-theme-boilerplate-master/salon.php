@@ -6,7 +6,7 @@ get_header(); // Inclut l'entête du thème
 
 <div class="section">
     <div class="salon-container">
-        <h1 class="section-title"><?php echo str_replace('Le Salon', '<span class="salon__title--highlight">Le Salon</span>', get_the_title()); ?></h1>
+        <h1 class="section-title salon__title"><?php echo str_replace('Le Salon', '<span class="salon__title--highlight">Le Salon</span>', get_the_title()); ?></h1>
 
         <section class="salon-bloc" style="background-color: <?php echo get_field('background_realisations'); ?>">
             <div class="salon-bloc__content">

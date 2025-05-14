@@ -7,9 +7,32 @@
 
     &__title {
         color: $color-accent;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
         margin-bottom: $spacing-large;
         text-align: center;
+        position: relative;
+        padding-bottom: $spacing-medium;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                $color-accent 20%,
+                $color-accent 80%,
+                transparent 100%
+            );
+            border-radius: 2px;
+            -webkit-animation: lineWidth 2s ease-in-out infinite;
+            -moz-animation: lineWidth 2s ease-in-out infinite;
+            -o-animation: lineWidth 2s ease-in-out infinite;
+            animation: lineWidth 2s ease-in-out infinite;
+        }
     }
 
     &-grid {
@@ -21,36 +44,43 @@
 
     &-card {
         position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: $shadow-dark;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
         min-height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
         text-decoration: none;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
         }
 
         &__content {
-            padding: $spacing-large;
-            text-align: center;
             position: relative;
-            z-index: 1;
+            padding: $spacing-large;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            color: $color-light;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             h2 {
-                color: $color-light;
-                font-size: 2rem;
-                margin-bottom: $spacing-medium;
+                margin-bottom: $spacing-small;
+                font-size: 1.8rem;
+                font-weight: 300;
                 position: relative;
-                padding-bottom: $spacing-small;
+                padding-bottom: $spacing-medium;
+                width: 100%;
+                text-align: center;
 
                 &::after {
                     content: '';
@@ -58,30 +88,28 @@
                     bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 60px;
+                    width: 150px;
                     height: 3px;
-                    background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+                    background: linear-gradient(90deg, 
+                        transparent 0%,
+                        $color-accent 20%,
+                        $color-accent 80%,
+                        transparent 100%
+                    );
                     border-radius: 2px;
+                    -webkit-animation: lineWidth 2s ease-in-out infinite;
+                    -moz-animation: lineWidth 2s ease-in-out infinite;
+                    -o-animation: lineWidth 2s ease-in-out infinite;
+                    animation: lineWidth 2s ease-in-out infinite;
                 }
             }
 
             p {
-                color: $color-light;
                 font-size: 1.1rem;
                 line-height: 1.6;
+                margin: 0;
                 opacity: 0.9;
             }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-            z-index: 0;
         }
     }
 
@@ -101,7 +129,13 @@
         }
 
         &__title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
+            padding-bottom: $spacing-small;
+
+            &::after {
+                width: 120px;
+                height: 2px;
+            }
         }
 
         &-grid {
@@ -116,7 +150,13 @@
                 padding: $spacing-medium;
 
                 h2 {
-                    font-size: 1.8rem;
+                    font-size: 1.5rem;
+                    padding-bottom: $spacing-small;
+
+                    &::after {
+                        width: 120px;
+                        height: 2px;
+                    }
                 }
 
                 p {

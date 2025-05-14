@@ -1,0 +1,99 @@
+.contact-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.contact-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  transition: transform 0.3s ease;
+}
+.contact-social a:hover {
+  transform: scale(1.1);
+}
+.contact-social a img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.site-footer {
+  background: #1a1a1a;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+}
+.site-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.site-footer__link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+.site-footer__link:hover {
+  color: #ffd700;
+}
+.site-footer__social {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+.site-footer__social-link {
+  color: white;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+.site-footer__social-link i {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.site-footer__social-link .fa-instagram {
+  font-size: 22px;
+}
+.site-footer__social-link .fa-facebook {
+  font-size: 22px;
+}
+.site-footer__social-link:hover {
+  color: #ffd700;
+}
+.site-footer__copyright {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=main.css.map */

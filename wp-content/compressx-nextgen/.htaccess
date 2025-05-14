@@ -1,0 +1,16 @@
+
+# BEGIN CompressX Webp
+# Les directives (lignes) entre « BEGIN CompressX Webp » et « END CompressX Webp » sont générées
+# dynamiquement, et doivent être modifiées uniquement via les filtres WordPress.
+# Toute modification des directives situées entre ces marqueurs sera surchargée.
+<IfModule mod_mime.c>
+AddType image/avif .avif
+AddType image/webp .webp
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/avif "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+Options -Indexes
+# END CompressX Webp

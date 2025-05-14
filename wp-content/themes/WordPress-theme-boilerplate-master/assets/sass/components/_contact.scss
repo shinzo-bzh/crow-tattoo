@@ -4,6 +4,33 @@
     padding: $spacing-large;
     min-height: calc(100vh - 80px); // Pour compenser le header fixe
 
+    &__title {
+        color: $color-accent;
+        font-size: 3rem;
+        margin-bottom: $spacing-large;
+        text-align: center;
+        position: relative;
+        padding-bottom: $spacing-medium;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                $color-accent 20%,
+                $color-accent 80%,
+                transparent 100%
+            );
+            border-radius: 2px;
+            animation: lineWidth 2s ease-in-out infinite;
+        }
+    }
+
     &-info {
         max-width: 800px;
         margin: 0 auto;
@@ -131,6 +158,18 @@
     }
 
     @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-medium;
+
+        &__title {
+            font-size: 2.5rem;
+            padding-bottom: $spacing-small;
+
+            &::after {
+                width: 120px;
+                height: 2px;
+            }
+        }
+
         &-info {
             padding: $spacing-medium;
 
@@ -157,5 +196,17 @@
                 height: 40px;
             }
         }
+    }
+}
+
+@keyframes lineWidth {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 150px;
+    }
+    100% {
+        width: 100px;
     }
 } 

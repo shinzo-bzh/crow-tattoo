@@ -1,6 +1,6 @@
 .header {
-    background-color: $color-dark;
-    box-shadow: $shadow-dark;
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     top: 0;
@@ -9,19 +9,40 @@
     &__container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: $spacing-medium;
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
         a {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: bold;
             text-decoration: none;
-            color: $color-light;
+            color: #ffffff;
+            text-align: center;
         }
+    }
+
+    &__image {
+        width: 200px;
+        height: 80px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
     }
 
     &__nav {
@@ -37,22 +58,22 @@
 
         li {
             position: relative;
-            margin: 0 $spacing-small;
+            margin: 0 10px;
 
             a {
-                color: $color-light;
+                color: #ffffff;
                 text-decoration: none;
-                padding: $spacing-small $spacing-medium;
+                padding: 10px 20px;
                 display: block;
-                transition: $transition-fast;
+                transition: 0.3s;
 
                 &:hover {
-                    color: $color-accent;
+                    color: #ff4d4d;
                 }
             }
 
             &.active > a {
-                color: $color-accent;
+                color: #ff4d4d;
             }
         }
 
@@ -60,11 +81,11 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: $color-dark-secondary;
+            background-color: #2d2d2d;
             min-width: 200px;
-            padding: $spacing-small 0;
+            padding: 10px 0;
             border-radius: 4px;
-            box-shadow: $shadow-dark;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             display: none;
             z-index: 1000;
 
@@ -72,7 +93,7 @@
                 margin: 0;
                 
                 a {
-                    padding: $spacing-small $spacing-medium;
+                    padding: 10px 20px;
                 }
             }
         }
@@ -87,32 +108,31 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: $spacing-small;
+        padding: 10px;
 
         span {
             display: block;
             width: 25px;
             height: 3px;
-            background: $color-light;
+            background: #ffffff;
             margin: 5px 0;
-            transition: $transition-fast;
+            transition: 0.3s;
         }
     }
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: 768px) {
         &__nav {
             position: fixed;
             top: 0;
             right: -100%;
             width: 80%;
             height: 100vh;
-            background: $color-dark;
-            transition: $transition-fast;
-            padding: $spacing-large;
-            box-shadow: $shadow-dark;
+            background: #1a1a1a;
+            transition: 0.3s;
+            padding: 80px 20px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             flex-direction: column;
             justify-content: flex-start;
-            padding-top: 80px;
 
             &.active {
                 right: 0;
@@ -124,11 +144,11 @@
             width: 100%;
 
             li {
-                margin: $spacing-small 0;
+                margin: 10px 0;
                 width: 100%;
 
                 a {
-                    padding: $spacing-medium;
+                    padding: 15px;
                     display: block;
                 }
             }
@@ -137,12 +157,12 @@
                 position: static;
                 display: none;
                 width: 100%;
-                padding-left: $spacing-medium;
+                padding-left: 20px;
                 background-color: transparent;
                 box-shadow: none;
 
                 li a {
-                    padding-left: $spacing-medium;
+                    padding-left: 20px;
                 }
             }
         }
@@ -162,6 +182,11 @@
                     transform: rotate(-45deg) translate(7px, -6px);
                 }
             }
+        }
+
+        &__image {
+            width: 150px;
+            height: 60px;
         }
     }
 } 

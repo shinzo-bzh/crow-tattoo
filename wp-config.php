@@ -59,7 +59,6 @@ define( 'LOGGED_IN_SALT',    'jOm!w8E=U>kb4aG:L1z`A;_ZJltq _du{99,M:Wu_XVsEH9wRb
 define( 'NONCE_SALT',        '-1v]zA_A0BMQV5Udd:SR*a ^4ieRi0U*8V!K;Q?D5>>Uw :K+_h~G?0N~q.|qq^e' );
 define( 'WP_CACHE_KEY_SALT', 'gFNqn!-Y*#:.Fxo<>+k;1AXgvHb9HVr?05~<3A:V6:<v3*|U&.CJ/TfOM)yppoT$' );
 
-
 /**#@-*/
 
 /**
@@ -70,10 +69,11 @@ define( 'WP_CACHE_KEY_SALT', 'gFNqn!-Y*#:.Fxo<>+k;1AXgvHb9HVr?05~<3A:V6:<v3*|U&.
  */
 $table_prefix = 'wp_';
 
-
 /* Add any custom values between this line and the "stop editing" line. */
 
-
+// Ajout des URLs de base
+define('WP_HOME', 'http://localhost:10022');
+define('WP_SITEURL', 'http://localhost:10022');
 
 /**
  * For developers: WordPress debugging mode.
@@ -92,6 +92,7 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 }
 
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
@@ -101,3 +102,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+

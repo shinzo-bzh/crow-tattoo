@@ -1,0 +1,110 @@
+// Variables
+$footer-bg: #1a1a1a;
+$footer-text: #ffffff;
+$footer-hover: #ffd700;
+$footer-height: 60px;
+
+// Footer Styles
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $footer-height;
+    background-color: $footer-bg;
+    color: $footer-text;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    &__content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__left {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__link {
+        color: $footer-text;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+
+        &:hover {
+            color: $footer-hover;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        &-link {
+            color: $footer-text;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $footer-hover;
+            }
+        }
+    }
+
+    &__copyright {
+        font-size: 0.9rem;
+        color: rgba($footer-text, 0.7);
+        margin: 0;
+    }
+}
+
+// Ajouter un padding au body pour éviter que le contenu ne soit caché par le footer
+body {
+    padding-bottom: $footer-height;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .footer {
+        &__container {
+            padding: 0 1rem;
+        }
+
+        &__content {
+            justify-content: center;
+        }
+
+        &__left {
+            gap: 1rem;
+        }
+
+        &__link {
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+        }
+
+        &__copyright {
+            font-size: 0.8rem;
+        }
+    }
+} 

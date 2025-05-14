@@ -13,15 +13,25 @@
         position: relative;
         padding-bottom: $spacing-medium;
 
-        &--highlight {
-            text-decoration: underline;
-            text-decoration-color: $color-accent;
-            text-decoration-thickness: 3px;
-            text-underline-offset: 8px;
-        }
-
         &::after {
-            display: none;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                $color-accent 20%,
+                $color-accent 80%,
+                transparent 100%
+            );
+            border-radius: 2px;
+            -webkit-animation: lineWidth 2s ease-in-out infinite;
+            -moz-animation: lineWidth 2s ease-in-out infinite;
+            -o-animation: lineWidth 2s ease-in-out infinite;
+            animation: lineWidth 2s ease-in-out infinite;
         }
     }
 
@@ -53,14 +63,22 @@
             justify-content: center;
 
             h2 {
-                color: $color-accent;
-                font-size: 2rem;
+                color: $color-light;
+                font-size: 1.8rem;
                 margin-bottom: $spacing-medium;
                 position: relative;
-                padding-left: 0;
+                padding-bottom: $spacing-small;
+                text-align: left;
 
-                &::before {
-                    display: none;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 60px;
+                    height: 2px;
+                    background: linear-gradient(90deg, $color-light, transparent);
+                    border-radius: 2px;
                 }
             }
 
@@ -129,22 +147,21 @@
 
         &__content {
             h2 {
-                color: $color-accent;
-                font-size: 2rem;
+                color: $color-light;
+                font-size: 1.8rem;
                 margin-bottom: $spacing-medium;
-                text-align: center;
                 position: relative;
                 padding-bottom: $spacing-small;
+                text-align: left;
 
                 &::after {
                     content: '';
                     position: absolute;
                     bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    left: 0;
                     width: 60px;
-                    height: 3px;
-                    background: linear-gradient(90deg, $color-accent, darken($color-accent, 20%));
+                    height: 2px;
+                    background: linear-gradient(90deg, $color-light, transparent);
                     border-radius: 2px;
                 }
             }
@@ -199,10 +216,13 @@
         }
 
         &__title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             padding-bottom: $spacing-small;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 6px;
+
+            &::after {
+                width: 120px;
+                height: 2px;
+            }
         }
 
         &-bloc {
@@ -213,7 +233,7 @@
                 padding: $spacing-medium;
 
                 h2 {
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                 }
 
                 div {
@@ -232,7 +252,7 @@
 
             &__content {
                 h2 {
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                 }
 
                 div {

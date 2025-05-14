@@ -3,6 +3,12 @@
 // WordPress title tag management
 add_theme_support('title-tag');
 
+// Enregistrement des styles
+function theme_styles() {
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'theme_styles');
+
 // ########## MENUS ##########
 
 // Enable menus feature

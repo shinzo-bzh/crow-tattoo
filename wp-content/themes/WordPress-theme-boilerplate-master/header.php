@@ -8,7 +8,9 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/minireset.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/main.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <?php wp_head(); ?>
 
@@ -44,9 +46,21 @@
 </head>
 
 <body <?php body_class('body'); ?>>
+    <?php wp_body_open(); ?>
+    
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
+                <?php 
+                $header_image_id = get_field('image_header');
+                if ($header_image_id) : ?>
+                    <div class="header__image">
+                        <img src="<?php echo wp_get_attachment_image_url($header_image_id, 'full'); ?>" 
+                             alt="<?php echo get_post_meta($header_image_id, '_wp_attachment_image_alt', true); ?>"
+                             class="header__img">
+                    </div>
+                <?php endif; ?>
+
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
