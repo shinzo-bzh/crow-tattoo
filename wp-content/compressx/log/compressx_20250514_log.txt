@@ -835,3 +835,9 @@ open log file: 2025-05-14 09:50:03
 [2025-05-14 09:55:54][notice]Start AVIF conversion:responsive-lightbox-thumbnail-1536x864.png
 [2025-05-14 09:55:55][notice]Converting responsive-lightbox-thumbnail-1536x864.png to AVIF succeeded.
 [2025-05-14 09:55:55][notice]Start AVIF conversion:responsive-lightbox-thumbnail-2048x1152.png
+[2025-05-14 09:57:50][notice]Start optimizing images: id:25
+[2025-05-14 09:57:50][notice]Start AVIF conversion:responsive-lightbox-thumbnail-scaled.png
+[2025-05-14 09:57:52][notice]Converting responsive-lightbox-thumbnail-scaled.png to AVIF failed. Error:Converted image is 0 KB and has been deleted. This usually happens because your AVIF library is not working properly. Please check the AVIF library.
+[2025-05-14 09:57:52][notice]Start AVIF conversion:responsive-lightbox-thumbnail-2048x1152.png
+[2025-05-14 09:57:53][notice]Converting responsive-lightbox-thumbnail-2048x1152.png to AVIF succeeded.
+[2025-05-14 09:57:53][notice]Optimizing image id:25 succeeded.
