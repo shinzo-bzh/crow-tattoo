@@ -16,7 +16,8 @@ get_header(); // Affiche l'entête du site
         $video_accueil = get_field('video_accueil');
         if ($video_accueil) : ?>
             <div class="accueil__video">
-                <?php echo wp_oembed_get($video_accueil); ?>
+                <!-- Sécurisation de l'URL de la vidéo avec wp_oembed_get() -->
+                <?php echo wp_oembed_get(esc_url($video_accueil)); ?>
             </div>
         <?php endif; ?>
 
