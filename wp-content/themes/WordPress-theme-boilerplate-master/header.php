@@ -8,9 +8,9 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/minireset.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/main.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/main.css">
 
     <?php wp_head(); ?>
     <style>

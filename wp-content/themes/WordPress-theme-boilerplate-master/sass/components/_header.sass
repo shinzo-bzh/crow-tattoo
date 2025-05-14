@@ -19,3 +19,108 @@
 
     @media (max-width: 768px)
         background-size: 85% auto 
+
+body .header
+    width: 100%
+    background: rgba(26, 26, 26, 0.9)
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+    display: flex
+    justify-content: center
+    padding: 1rem 0
+
+    &__container
+        width: 50%
+        max-width: 700px
+        margin: 0 auto
+        padding: 1rem 2rem
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: rgba(26, 26, 26, 0.9)
+        border-radius: 20px
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+    &__logo
+        display: flex
+        align-items: center
+        gap: 1rem
+
+    &__image
+        max-width: 150px
+        height: auto
+
+        img
+            width: 100%
+            height: auto
+            object-fit: contain
+
+    &__nav
+        .header__menu
+            display: flex
+            gap: 2rem
+            list-style: none
+            margin: 0
+            padding: 0
+
+            a
+                color: #fff
+                text-decoration: none
+                font-size: 1.1rem
+                transition: color 0.3s ease
+
+                &:hover
+                    color: #ff4d4d
+
+    &__burger
+        display: none
+        background: none
+        border: none
+        cursor: pointer
+        padding: 0.5rem
+
+        span
+            display: block
+            width: 25px
+            height: 2px
+            background: #fff
+            margin: 5px 0
+            transition: 0.3s
+
+    @media screen and (max-width: 768px)
+        &__container
+            width: 85%
+            padding: 1rem
+
+        &__nav
+            position: fixed
+            top: 0
+            right: -100%
+            width: 80%
+            height: 100vh
+            background: rgba(26, 26, 26, 0.95)
+            transition: 0.3s
+            padding: 2rem
+
+            &.active
+                right: 0
+
+            .header__menu
+                flex-direction: column
+                gap: 1.5rem
+
+        &__burger
+            display: block
+            z-index: 1001
+
+            &.active
+                span:first-child
+                    transform: rotate(45deg) translate(5px, 5px)
+
+                span:nth-child(2)
+                    opacity: 0
+
+                span:last-child
+                    transform: rotate(-45deg) translate(7px, -6px) 

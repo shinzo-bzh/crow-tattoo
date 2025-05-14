@@ -23,6 +23,111 @@
   }
 }
 
+body .header {
+  width: 100%;
+  background: rgba(26, 26, 26, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+body .header__container {
+  width: 50%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+body .header__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body .header__image {
+  max-width: 150px;
+  height: auto;
+}
+body .header__image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+body .header__nav .header__menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body .header__nav .header__menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+body .header__nav .header__menu a:hover {
+  color: #ff4d4d;
+}
+body .header__burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+body .header__burger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  body .header__container {
+    width: 85%;
+    padding: 1rem;
+  }
+  body .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.95);
+    transition: 0.3s;
+    padding: 2rem;
+  }
+  body .header__nav.active {
+    right: 0;
+  }
+  body .header__nav .header__menu {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  body .header__burger {
+    display: block;
+    z-index: 1001;
+  }
+  body .header__burger.active span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  body .header__burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  body .header__burger.active span:last-child {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
 .home .header {
   position: relative;
   overflow: hidden;
